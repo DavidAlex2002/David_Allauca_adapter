@@ -4,20 +4,20 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
-public class DatabaseManager {
-	private static DatabaseManager instance = null;
+public class Database_Allauca_David {
+	private static Database_Allauca_David instance = null;
 	private MongoClient client;
 	private MongoDatabase database;
 	
-	private DatabaseManager() {
+	private Database_Allauca_David() {
 		client = MongoClients.create("mongodb://localhost:27017");
 		
 		database = client.getDatabase("ExamPatronAdapter");
 	}
 	
-	public static DatabaseManager getInstance() {
+	public static Database_Allauca_David getInstance() {
 		if (instance == null)
-			instance = new DatabaseManager();
+			instance = new Database_Allauca_David();
 		
 		return instance;
 	}
